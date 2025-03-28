@@ -35,7 +35,7 @@ header {
     border-radius: 15px;
     padding: 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.2s ease-out;
+    transition: box-shadow 0.3s ease;
 }
 
 .links:hover {
@@ -52,30 +52,42 @@ header {
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
     letter-spacing: 0.5px;
-    transition: 
-        background-color 0.2s ease-out, 
-        transform 0.2s ease-out;
-    will-change: transform;
+}
+
+.links a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s ease;
 }
 
 .links a:hover {
     background-color: #7bb7d1;
     color: #1d3a6d;
-    transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.links a:hover::before {
+    left: 100%;
 }
 
 .links a:active {
-    transform: translateY(0) scale(0.98);
+    transform: translateY(0) scale(0.95);
     background-color: #00BFF3;
     transition: all 0.1s ease;
 }
-
 .media-button {
     background-color: #4ecdc4;
 }
@@ -122,26 +134,25 @@ header {
     flex-direction: column;
     gap: 10px;
     align-items: center;
-    z-index: 10;
 }
 
 .go-top, .home-link {
     background-color: #1d3a6d;
     color: white;
-    transition: 
-        background-color 0.2s ease-out, 
-        transform 0.2s ease-out;
-    will-change: transform;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .go-top {
     border: none;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
@@ -149,24 +160,39 @@ header {
 
 .home-link {
     padding: 8px 15px;
-    text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    border-radius: 20px;
     text-align: center;
     display: inline-block;
     letter-spacing: 0.5px;
+    border-radius: 20px;
+}
+
+.go-top::before, .home-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s ease;
 }
 
 .go-top:hover, .home-link:hover {
     background-color: #7bb7d1;
     color: #1d3a6d;
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.go-top:hover::before, .home-link:hover::before {
+    left: 100%;
 }
 
 .go-top:active, .home-link:active {
     background-color: #00BFF3;
-    transform: translateY(0) scale(0.98);
+    transform: translateY(0) scale(0.95);
     transition: all 0.1s ease;
 }
 
