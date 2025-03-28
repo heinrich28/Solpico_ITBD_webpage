@@ -150,19 +150,36 @@ audio {
     align-items: center;
 }
 
-.go-top {
-    background: #1d3a6d;
+.go-top, .home-link {
+    background-color: #1d3a6d;
     color: white;
-    border: none;
+    text-decoration: none;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.go-top {
+    border: none;
+    width: 40px;
+    height: 40px;
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.home-link {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    letter-spacing: 0.5px;
+    border-radius: 20px;
 }
 
 .go-top::before, .home-link::before {
@@ -174,19 +191,6 @@ audio {
     height: 100%;
     background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
     transition: all 0.6s ease;
-}
-
-.home-link {
-    background-color: #1d3a6d;
-    color: white;
-    padding: 8px 15px;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 20px;
-    text-align: center;
-    display: inline-block;
-    letter-spacing: 0.5px;
 }
 
 .go-top:hover, .home-link:hover {
@@ -205,7 +209,6 @@ audio {
     transform: translateY(0) scale(0.95);
     transition: all 0.1s ease;
 }
-
 @media (max-width: 768px) {
     header {
         font-size: 2em;
